@@ -1,0 +1,249 @@
+
+                            Unreal Tournament
+                               Version 436
+                             October 31, 2000
+
+
+
+
+          TABLE OF CONTENTS
+
+          1 System Requirements
+          2 Installation
+          3 Playing The Game
+          4 Linux specific Changelog
+          5 Known Issues
+          6 Troubleshooting
+          7 Contacting Loki Entertainment Software
+
+
+
+-----------------------
+(1) SYSTEM REQUIREMENTS
+-----------------------
+
+  Linux kernel version 2.2.X
+  Pentium II with 3D accelerator card (see below)
+  64 MB RAM required (128 MB recommended)
+  Video card capable of 640x480 resolution
+  XFree86 3.3.5 or newer at 16bpp
+  OSS compatible sound card
+  Hard disk with at least 550 MB of space
+
+This product is not intended for use with any version of the Windows
+operating system.
+
+This product supports 3D accelerators through OpenGL. Consult
+http://lokigames.com/support/gldrivers for the latest news on drivers
+and installation.
+
+
+----------------
+(2) INSTALLATION
+----------------
+
+Before starting the installation process with "sh ut-install-436.run"
+you must have your Unreal Tournament CDROM in your CDROM drive and have
+it mounted.
+
+For example:
+
+$mount /cdrom
+$sh ut-install-436.run
+
+
+If you want to install Unreal Tournament remotely you can use the
+SETUP_CDROM environment variable to point to your CDROM drive.
+
+For example:
+
+$export SETUP_CDROM=/path/to/cdrom
+$sh ut-install-436.run
+
+
+To make use of the S3TC compression feature, install 436 and then
+manually copy over the files from your Textures directory from your
+2nd UT CD to the Textures directory in your INSTALL_DIR/Textures
+directory overwriting existing files (except credits.utx).
+
+
+--------------------
+(3) PLAYING THE GAME
+--------------------
+
+Run 'ut' to start the game.
+
+The first time you run Unreal Tournament it will create a ~/.loki/ut
+directory. Preferences, etc., will be stored here.
+
+
+----------------------------
+(4) LINUX SPECIFIC CHANGELOG
+----------------------------
+
+THIS VERSION IS ONLY COMPATIBLE WITH VERSION 432+
+
+OpenGL Renderer
+
+- implemented detail textures
+- additional implementation (using vertex arrays)
+- fixed minor visual artifacts (in conjunction with fog)
+
+Input
+
+- fixed keyrepeat (this time for real ;))
+
+Misc
+
+- changed signal handlers
+
+Networking
+
+- solved ngWorldStats problems
+- fixed http download redirection
+ 
+
+----------------
+(5) KNOWN ISSUES
+----------------
+
+OpenGL Renderer
+
+- Z Buffer artifacts with 16 bit rendering
+
+
+Software Renderer
+
+- slow in 32bpp mode!!!
+
+GUI
+
+- some menu entries are nooped. They are not removed to ensure mod
+  compatibility.
+
+-------------------
+(6) TROUBLESHOOTING
+-------------------
+
+The following are some of the more common problems you might have, and
+recommended solutions. For more details see the support section on
+www.lokigames.com and visit our bug reporting system at
+
+http://fenris.lokigames.com.
+
+   
+Q: The game segfaults when trying to use windowed mode with the Glide
+   renderer.
+
+A: Glide doesn't support rendering in a window.
+
+
+Q: Most of the time when I connect to a server on the internet it starts
+   downloading "multimesh".
+
+A: It is strongly advised that you install the official Bonuspack available
+   at http://download.cnet.com/downloads/0-10044-108-58371.html?bt.dl-10008.EpicMegaGames.10044-108-58371 
+   which includes the required files to play on most internet servers nowadays.
+
+
+Q: I am rendering in windowed mode and the mouse is grabbed in the window.
+
+A: You can press CTRL-G to change between grabbing or not. Alternatively 
+   you can change the UnrealTournament.ini file
+
+
+Q: The game crashes and I can't switch back to my normal resolution using
+   CTRL-ALT- +/-
+
+A: After running "xvidtune -unlock" you can change resolutions normally.
+
+
+Q: I installed the Glide[OpenGL] Renderer as default but now want to use 
+   the OpenGL[Glide] renderer.
+
+Q: I want to use the Software Renderer.
+
+A: Edit the following lines in either 
+   (INSTALL_PATH)/System/UnrealTournament.ini or
+   (HOME)/.loki/ut/System/UnrealTournament.ini
+
+   To use the OpenGL renderer:
+
+   [Engine.Engine]
+   GameRenderDevice=SDLGLDrv.SDLGLRenderDevice
+   WindowedRenderDevice=SDLGLDrv.SDLGLRenderDevice
+   RenderDevice=SDLGLDrv.SDLGLRenderDevice
+
+   To use the Glide renderer:
+
+   [Engine.Engine]
+   GameRenderDevice=GlideDrv.GlideRenderDevice
+   WindowedRenderDevice=GlideDrv.GlideRenderDevice
+   RenderDevice=GlideDrv.GlideRenderDevice
+
+   To use the Software renderer:
+
+   [Engine.Engine]
+   GameRenderDevice=SDLSoftDrv.SDLSoftwareRenderDevice
+   WindowedRenderDevice=SDLSoftDrv.SDLSoftwareRenderDevice
+   RenderDevice=SDLSoftDrv.SDLSoftwareRenderDevice
+
+   Global settings are made in (INSTALL_PATH)/... and local ones in your
+   home directory. When you first run Unreal Tournament it will copy the
+   version of UnrealTournament.ini from (INSTALL_PATH)/... to your home
+   directory and from there on only use the one in your home directory.
+
+
+Q: How can I specify my OpenGL library?
+
+A: You can choose the OpenGL library Unreal Tournament tries to use
+   by specifying the path to it in your UnrealTournament.ini
+
+   [SDLGLDrv.SDLGLRenderDevice]
+
+   OpenGLLibName=libGL.so.1
+
+   or 
+
+   OpenGLLibName=/opengl/library/path/libMYGL.so
+
+
+Q: I am using XF 4.0 with my 3dfx card and the textures look really
+   weird. When I exit the game I can see a "No space for texture"
+   error message.
+
+A: This is a bug in DRI that got fixed recently (07/31/00). You have 
+   to use the CVS version of DRI.
+
+
+Q: The towers seem to flicker in CTF-FACE.
+
+A: If you have a 3dfx card please choose the Glide renderer. Otherwise
+   try to use 32 bit renderering which should resolve the issues you 
+   are seeing and also will enhance the display quality.
+
+
+------------------------------------------
+(7) CONTACTING LOKI ENTERTAINMENT SOFTWARE
+------------------------------------------
+
+Technical Support
+  
+Support for Unreal Tournament for Linux is available from
+Loki Entertainment Software at:
+ 
+    Bug Tracking Database:  http://fenris.lokigames.com
+
+    FAQ:     http://faqs.lokigames.com
+
+    Email:   support@lokigames.com
+
+    Phone:   714-508-2140. Telephone support is available 
+             Monday through Friday, 9 A.M. to 5 P.M. Pacific 
+             Standard Time.
+
+General Discussion
+
+You can also communicate with other Unreal Tournament players at:
+
+    Usenet:  news://news.lokigames.com/loki.games.ut

@@ -1,0 +1,50 @@
+
+				Unreal Tournament: Bonus Pack Collection
+	                     (http://www.unrealtournament.com/)
+
+===============================================================
+
+ABOUT
+=======
+
+	The Unreal Tournament Bonus Packs are a big thank-you 
+	from the creators of the game to all who purchased the full version.
+	The Bonus Packs includes new character skins, all new relics 
+	and new maps.
+
+NOTES
+======
+
+	- the GOTY version includes the first bonus pack, no need to install it
+	
+	- bonus pack 1 adds: 3 characters, 11 maps, and 6 relics
+	
+	- bonus pack 2 adds: 2 CTF maps and 3 mutators
+	
+	- bonus pack 3 adds: 4 CTF and 2 DM maps
+	
+	- bonus pac 4 adds: 2 characters and 12 maps
+
+    - if you want to run a dedicated server add following lines to your 
+	  ~/.loki/ut/System/UnrealTournament.ini 
+	  below the [Engine.GameEngine] header
+ 
+	 	;for bonuspack 1
+	 	ServerPackages=Multimesh
+		ServerPackages=Relics
+		ServerPackages=EpicCustomModels
+		ServerPackages=TCowMeshSkins
+		ServerPackages=TNaliMeshSkins
+		ServerPackages=TSkMSkins
+		;for bonus pack 2		
+		ServerPackages=De
+		;for bonus pack 4
+		ServerPackages=SkeletalChars
+	
+TECHNICAL SUPPORT
+===================
+
+	Website: http://liflg.org/
+	Forum:   http://liflg.org/forum/
+
+The Linux Installers for Linux Gamers Team

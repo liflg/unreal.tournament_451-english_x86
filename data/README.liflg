@@ -1,0 +1,45 @@
+
+		Unreal Tournament: English version 451
+	           (http://www.unrealtournament.com/)
+
+========================================
+
+ABOUT
+=====
+
+	Unreal Tournament, the ultimate challenge of competitive game-play. 
+	Unreal Tournament showcases the enhanced, hugely-popular Unreal
+	engine, the benchmark of 3-D graphical excellence and immersive 
+	gameplay. This stand-alone game brings you never before, richly-
+	textured and thrilling environments. 
+	In single player mode with "bots" (virtual customizeable team mates)
+	or in multiplayer mode with up to 16 bots and/or humans. 
+	Step into the Unreal arena and stake your life in the pursuit of victory 
+	as the Unreal Grand Master. Or suffer the agonizing death of defeat.
+
+RUNNING THE GAME
+=============
+
+	run "ut" to play
+
+NOTES
+====
+
+	- if the game runs too fast, please try to enable vertical
+	  synchronization (VSYNC) for your gpu-driver
+	
+	- opportunity to install and use S3TC textures 
+	  (they can cause problems while playing on internet servers)
+	
+	- http://faqs.lokigames.com/utfaq.html
+
+	- some libraries are sponsored by Linux Game Publishing
+	  (http://linuxgamepublishing.com/)
+
+TECHNICAL SUPPORT
+=============
+
+	Website: http://liflg.org/
+	Forum:   http://liflg.org/forum/
+
+The Linux Installers for Linux Gamers Team
